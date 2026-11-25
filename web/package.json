@@ -1,0 +1,44 @@
+{
+  "name": "lingyoujie",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "next typegen && tsc --noEmit",
+    "local": "node scripts/local.mjs",
+    "test:local": "node scripts/local.mjs --test",
+    "db:migrate": "node --env-file-if-exists=.env.local scripts/migrate.mjs",
+    "db:publish-editorial": "node --env-file-if-exists=.env.local scripts/publish-editorial.mjs",
+    "update:content": "node --env-file=.local/lyj-neon-setup.env scripts/publish-editorial.mjs --hosted",
+    "release:site": "npm exec --yes --package=vercel@66.6.0 -- vercel deploy --prod --scope joey766s-projects",
+    "test:e2e": "playwright test",
+    "test:db": "node --env-file-if-exists=.env.local --test tests/permissions.test.mjs"
+  },
+  "dependencies": {
+    "better-auth": "^1.6.0",
+    "next": "^16.2.0",
+    "nodemailer": "^8.0.0",
+    "pg": "^8.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@tailwindcss/postcss": "^4.2.0",
+    "@types/node": "^24.0.0",
+    "@types/nodemailer": "^7.0.0",
+    "@types/pg": "^8.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "embedded-postgres": "^18.7.0-beta.19",
+    "tailwindcss": "^4.2.0",
+    "typescript": "^5.9.0"
+  }
+}

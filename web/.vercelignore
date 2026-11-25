@@ -1,0 +1,17 @@
+.env*
+.local/
+.git/
+.vercel/
+.next/
+node_modules/
+docs/
+migrations/
+scripts/
+tests/
+test-results/
+playwright-report/
+playwright.config.ts
+README.md
+next-env.d.ts
+*.tsbuildinfo
+*.log

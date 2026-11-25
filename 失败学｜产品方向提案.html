@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>失败学｜产品方向提案</title>
+<style>
+  :root{--paper:#f6f1e7;--light:#fffaf1;--ink:#272d27;--muted:#555b51;--line:#d1c7b8;--rust:#9b3a2a;--soft:#f0dfd2;--green:#233e35;--pale:#e6eadd;--body:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;--serif:"Songti SC","Noto Serif CJK SC","SimSun",serif}
+  *{box-sizing:border-box}html{scroll-padding-top:5rem}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.82 var(--body);overflow-wrap:anywhere}a{color:var(--rust);text-underline-offset:.22em}a:hover{text-decoration-thickness:.15em}a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:4px}button,input{font:inherit}h1,h2,h3,h4,p,figure,blockquote{margin:0}h1,h2,h3,h4{line-height:1.35}p+p{margin-top:.65rem}strong{font-weight:750}.wrap{width:min(1136px,calc(100% - 3.5rem));margin-inline:auto}.measure{max-width:43rem}.kicker,.meta,.eyebrow{font-size:.78rem;letter-spacing:.09em;font-weight:700}.kicker,.eyebrow{color:var(--rust)}.meta,.muted,.caption{color:var(--muted)}.caption{font-size:.9rem}.skip{position:absolute;left:.7rem;top:-4rem;z-index:10;background:var(--light);padding:.25rem .75rem}.skip:focus{top:.6rem}
+  .mast{padding-top:21px}.mastline{display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding-bottom:.8rem;border-bottom:1px solid var(--ink)}.wordmark{font-family:var(--serif);font-weight:900;font-size:1.6rem;letter-spacing:.11em}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(1.5rem,6vw,6rem);align-items:center;padding-block:clamp(2rem,7vw,5.4rem)}h1{font-family:var(--serif);font-size:clamp(2.65rem,5.7vw,5.25rem);font-weight:900;line-height:1.14;letter-spacing:-.045em;margin:.75rem 0 1.05rem}h1 span{display:block;color:var(--rust)}.hero .intro{font-size:clamp(1.04rem,1.7vw,1.26rem);max-width:33rem}.hero .caption{margin-top:.8rem}.hero-art{margin:1.1rem 1rem .75rem .35rem;padding:1.4rem;background:var(--light);border:1px solid var(--line);box-shadow:8px 8px 0 var(--soft), 16px 16px 0 var(--pale);position:relative}.hero-art::before{position:absolute;content:"";height:11px;left:18px;right:18px;top:-6px;border:1px solid var(--line);background:var(--paper);z-index:-1}.hero-art .work{font-family:var(--serif);font-weight:800;font-size:clamp(1.15rem,2.1vw,1.7rem);margin:.6rem 0 1rem}.hero-art .stamp{display:inline-block;color:var(--rust);border:1px solid currentColor;padding:.1rem .45rem;margin-top:1.15rem;font-size:.78rem;transform:rotate(-3deg)}.duet{border-left:1px dashed var(--line);padding-left:.95rem}.duet p{font-size:.92rem}.duet b{color:var(--green)}
+  nav{position:sticky;inset-block-start:0;background:var(--paper);z-index:5;border-block:1px solid var(--line)}nav ul{margin:0;padding:.6rem 0;list-style:none;display:flex;gap:.2rem 1.55rem;flex-wrap:wrap}nav a{white-space:nowrap;font-size:.86rem;color:var(--ink);text-decoration:none;padding:.18rem 0}nav a:hover{color:var(--rust);text-decoration:underline}
+  section.chapter{padding-block:clamp(2.7rem,6vw,5.2rem);border-bottom:1px solid var(--line)}.section-head{display:grid;grid-template-columns:1.12fr .88fr;gap:1.3rem 2.55rem;align-items:end;margin-bottom:1.8rem}h2{font-family:var(--serif);font-size:clamp(2rem,4.3vw,3.6rem);letter-spacing:-.055em;margin:.32rem 0 0}h3{font-size:1.2rem;margin:0 0 .42rem}h4{font-size:1.02rem}.section-head p{padding-bottom:.2rem;color:var(--muted)}.inverse{background:var(--green);color:#fffaf0}.inverse .kicker,.inverse a{color:#f6c9a9}.inverse .section-head p,.inverse .caption{color:#e0e8de}.inverse .ribbon{border-color:#7a9185}.ribbon{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem 1.65rem;border-block:1px solid var(--line);padding:1.1rem 0}.ribbon p{font-size:.95rem}.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 2.1rem}.case{border-top:1px solid var(--line);padding:1.25rem 0 1.45rem;min-width:0}.case h3{margin:.35rem 0 .5rem}.case p{font-size:.94rem}.sources{font-size:.84rem!important;margin-top:.65rem!important;display:flex;gap:.18rem 1rem;flex-wrap:wrap}.subheading{font-family:var(--serif);font-weight:900;font-size:clamp(1.5rem,2.8vw,2.1rem);margin:1.8rem 0 .9rem}.callout{background:var(--soft);padding:1.15rem 1.3rem;margin-top:1.35rem}.callout p{font-size:.95rem}.option{display:grid;grid-template-columns:minmax(10rem,.72fr) 2fr;gap:1.1rem 1.8rem;border-top:1px solid var(--line);padding:1.15rem .45rem}.option.featured{background:var(--pale);padding-inline:1.1rem}.option p{font-size:.95rem}.option .eyebrow{display:block;margin-bottom:.23rem}.table-shell{overflow-x:auto;margin:1.1rem 0;max-width:100%}table{border-collapse:collapse;width:100%;min-width:660px;font-size:.9rem;line-height:1.6}caption{text-align:left;color:var(--muted);margin-bottom:.45rem}th,td{border-block-end:1px solid var(--line);padding:.65rem .65rem;text-align:left;vertical-align:top}thead th{background:var(--soft)}tbody tr.picked{background:var(--pale)}tbody th{width:9.5rem}
+  .prototype{display:grid;grid-template-columns:1fr .94fr;gap:1.3rem;align-items:start}.mock{border:1px solid var(--line);background:var(--light);min-width:0}.mock-head{padding:.65rem 1rem;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:.6rem}.mock-head span:first-child{font-weight:800}.mock-body{padding:1rem 1.05rem 1.15rem}.mock h3{font-family:var(--serif);font-size:clamp(1.35rem,2.65vw,2rem);margin:.3rem 0 .65rem}.mock .hint{margin-bottom:.65rem}.filterline{display:flex;gap:.4rem;flex-wrap:wrap;margin:.65rem 0 .85rem}.tag{display:inline-block;border:1px solid var(--line);padding:.08rem .55rem;font-size:.82rem}.tag.active{background:var(--pale);color:var(--green);border-color:var(--green)}.sample{padding:.85rem;border:1px solid var(--line);background:var(--paper)}.sample+.sample{margin-top:.6rem}.sample p{font-size:.92rem;margin-top:.35rem}.sample.alt{background:var(--pale)}.sample .meta{font-size:.71rem}.mock details{margin-top:.75rem;border-top:1px solid var(--line);padding-top:.55rem}.mock details p{font-size:.92rem;padding:.4rem 0}.mock details summary{color:var(--rust)}summary{cursor:pointer;font-weight:700}.demo-actions{margin-top:.85rem;display:flex;flex-wrap:wrap;gap:.45rem}.demo-actions button{border:1px solid var(--green);background:var(--light);color:var(--green);font-size:.86rem;padding:.26rem .55rem;cursor:pointer}.demo-actions button[aria-pressed="true"]{background:var(--green);color:var(--light)}.demo-status{min-height:2.4em;color:var(--muted);font-size:.82rem;margin:.35rem 0 0}
+  .flow{list-style:none;padding:0;margin:1.1rem 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line)}.flow li{padding:.8rem .95rem;border-right:1px solid var(--line);min-width:0}.flow li:last-child{border-right:0}.flow b,.flow span{display:block}.flow b{font-size:.97rem}.flow span{font-size:.86rem;color:var(--muted);margin-top:.25rem}.architecture{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--pale);gap:1px;border:1px solid var(--line);background-color:var(--line);margin:1rem 0}.architecture>div{background:var(--pale);padding:.9rem 1rem}.architecture p{font-size:.9rem;margin-top:.2rem}.split{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 2rem;margin:1.2rem 0}.split>div{border-top:1px solid var(--line);padding-top:.82rem}.split p{font-size:.94rem}.rules,.campaigns,.steps,.questions{list-style:none;padding:0;margin:1rem 0}.rules li,.steps li,.questions li{display:grid;grid-template-columns:minmax(10rem,.65fr) 1.8fr;gap:.65rem 1.25rem;border-top:1px solid var(--line);padding:.85rem 0}.rules p,.steps p,.questions p{font-size:.94rem}.campaigns li{border-top:1px solid var(--line);padding:1.05rem 0;display:grid;grid-template-columns:1fr 2fr;gap:.55rem 1.6rem}.campaigns p{font-size:.94rem}.campaigns h3{font-family:var(--serif);font-size:1.45rem}.inverse .questions li{border-color:#7a9185}.closing{font-family:var(--serif);font-weight:900;font-size:clamp(1.45rem,3.35vw,2.65rem);line-height:1.45;margin-top:1.3rem}footer{padding:1.15rem 0 2rem;font-size:.83rem;color:var(--muted)}footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  @media(max-width:760px){html{scroll-padding-top:7.5rem}.wrap{width:calc(100% - 2rem)}.hero,.section-head,.prototype{grid-template-columns:1fr}.hero{gap:1.1rem}.hero-art{max-width:27rem}.section-head{gap:.6rem}.ribbon{grid-template-columns:1fr}.evidence-grid,.split{gap:0 1rem}nav ul{gap:.12rem .9rem}.flow{grid-template-columns:1fr 1fr}.flow li:nth-child(2){border-right:0}.flow li:nth-child(-n+2){border-bottom:1px solid var(--line)}.architecture{grid-template-columns:1fr}.campaigns li,.rules li,.steps li,.questions li,.option{grid-template-columns:1fr;gap:.35rem}.option h3{margin-bottom:.1rem}}
+  @media(max-width:490px){.evidence-grid,.split{grid-template-columns:1fr}.mastline .meta{font-size:.7rem}.mock-head .meta{font-size:.68rem}.case{padding-bottom:1.15rem}}
+  @media print{html{scroll-padding-top:0}body{background:white;color:black;font-size:10pt}.wrap{width:auto}.mast,.hero,.chapter{padding-block:15pt!important}nav,.skip,.demo-actions,.demo-status,footer a{display:none}.inverse{background:white;color:black}.inverse .kicker,.inverse .section-head p,.inverse .caption{color:#3c3c3c}.hero-art{box-shadow:none}.case,.mock,.option,.rules li,.steps li,.campaigns li{break-inside:avoid}.table-shell{overflow:visible}table{min-width:0}a{color:#451910}h2{font-size:23pt}}
+</style>
+</head>
+<body>
+<a class="skip" href="#decision">跳到正文</a>
+<header id="top" class="mast wrap">
+  <div class="mastline"><span class="wordmark">失败学</span><span class="meta">产品方向提案 · 2026 年 11 月 20 日</span></div>
+  <div class="hero">
+    <div><p class="kicker">第一阶段 · 给创始人的建议</p><h1>日子还在过，<span>故事可以慢慢写。</span></h1><p class="intro">一个可以用化名写下一段没按计划发生的人生、决定别人怎样回应，并在以后回来续写的中文社区。</p><p class="caption">推荐「未完故事」方向。先做 30 天人工试点，再决定是否开发。</p></div>
+    <figure class="hero-art"><figcaption class="meta">未完故事 · 虚构样卡</figcaption><p class="work">查完成绩，我坐了两站反方向的地铁</p><div class="duet"><p><b>那天</b>　我一路握着手机，想晚一点回到家。</p><p><b>两周后</b>　我还是不想聊下一步。今天先和朋友吃了顿饭。</p></div><span class="stamp">现在只想被听见</span></figure>
+  </div>
+</header>
+<nav aria-label="提案目录"><div class="wrap"><ul>
+  <li><a href="#decision">推荐</a></li><li><a href="#research">案例研究</a></li><li><a href="#options">四个方向</a></li><li><a href="#experience">产品体验</a></li><li><a href="#care">社区治理</a></li><li><a href="#pilot">冷启动与验证</a></li><li><a href="#founder">创始人决策</a></li>
+</ul></div></nav>
+<main>
+<section class="chapter inverse" id="decision"><div class="wrap">
+  <div class="section-head"><div><p class="kicker">推荐定位</p><h2>给还没想好下一步的人</h2></div><p>首批优先招募毕业前后经历升学、求职或入职挫折，又想找同路人聊一聊的成年中文用户。也纳入主动改道、接受普通工作的人，以免社区默认人人都在等待翻身。</p></div>
+  <div class="ribbon">
+    <div><h3>从一个时刻写起</h3><p>低门槛的故事片段，容得下沉默、迟疑、回到原点，也容得下后来过得很好。</p></div>
+    <div><h3>作者决定怎样被回应</h3><p>只想被听见、愿听相似经历或希望听建议。读者在作者设定的范围内回应。</p></div>
+    <div><h3>订阅一则故事的后续</h3><p>原片段和新时间节点并存。作者可以改口、缩小可见范围，或一直留白。</p></div>
+  </div>
+  <p style="margin-top:1rem" class="measure">这里值得独立出来的假设是：同一段经历在熟人圈容易被认出，在开放讨论里容易被劝解或拿去比较。一个有明确回应边界、允许作者把时间线握在手里的地方，可能让原本只看的人愿意写一次，也愿意再读回信。</p>
+</div></section>
+<section class="chapter" id="research"><div class="wrap">
+  <div class="section-head"><div><p class="kicker">机会与证据</p><h2>共鸣从具体处发生</h2></div><p>这是目的性选样。优先看原件、平台规则及当事人材料，辅以媒体访谈。往下每一条「可迁移」都是产品判断。成员数、展览收件量、机构自报覆盖量各有口径，均无法证明复访。</p></div>
+  <div class="evidence-grid">
+    <article class="case"><span class="eyebrow">A · 媒体采访与社区讨论</span><h3>豆瓣「985废物引进计划」</h3><p>凤凰网转载的 2020 年采访报道记载，小组从 5 月 10 日建立时的个位数，增至 7 月报道时约 8 万名成员。这个数字是当时的媒体报道口径。受访者提到有些事以往很少对别人说，却在组里写了长帖。另有豆瓣站内讨论记录二本、专科学生遭遇的部分排斥。</p><p><b>可迁移：</b>自嘲把孤立的羞耻变成可识别的暗号，弱身份降低熟人压力，相似经历让人预期会被理解。用「复试结果出来那天」「入职第一周」连接人。自嘲留给作者，别拿学历当入场券，也别让「废物」成为默认身份。受访者的安全感无法证明小组有严格匿名或防外传能力。</p><p class="sources"><a href="https://news.ifeng.com/c/7yTEbp7C3xP">凤凰网转载采访</a><a href="https://book.douban.com/review/12848212/">豆瓣站内访谈与讨论</a></p></article>
+    <article class="case"><span class="eyebrow">B · 作者原件与校刊报道</span><h3>Johannes Haushofer 的失败简历</h3><p>2016 年时任 Princeton 助理教授的 Haushofer 把申请、奖项与论文遭拒写成简历。他注明灵感来自 Melanie Stefan 2010 年的文章。Princeton 校刊报道这份文件被多国媒体报道，所查来源缺少统一的传播量。</p><p><b>可迁移：</b>熟悉的格式被倒过来用，一眼看懂、容易模仿。学术身份可能强化了反差，也是幸存者偏差的来源。卡片移除头衔栏和失败次数，只放一个生活场景、作者允许公开的一句原话，以及当下状态。读者先从细节认出自己。</p><p class="sources"><a href="https://johanneshaushofer.com/Johannes_Haushofer_CV_of_Failures.pdf">作者原件</a><a href="https://paw.princeton.edu/article/cv-failures-goes-viral">Princeton 校刊</a><a href="https://www.nature.com/articles/nj7322-467a">Stefan 原文</a></p></article>
+    <article class="case"><span class="eyebrow">C · 主办方活动描述与自报规模</span><h3>Fuckup Nights</h3><p>主办方将真实失败做成有主持的现场活动，企业场通常由三位或更多讲述者参与，并提供选题和结构辅导。官网自报覆盖超过 250 座城市，统计口径与活跃人数未知。活动页可见城市分场。</p><p><b>可迁移：</b>局部、有限时的自我披露给听众一个回应他人的入口，主持人能示范「先复述听到了什么」。线上先用每周同题和收录回信建立节奏，有复访后再做不录音的小场。讲述仍在进行中的生活，主持人也可以邀请谈损失或遗憾，无需讲出商业教训。</p><p class="sources"><a href="https://en.fuckupnights.com/">主办方与自报覆盖</a><a href="https://en.fuckupnights.com/at-work">企业场规则</a><a href="https://en.fuckupnights.com/events">城市分场</a></p></article>
+    <article class="case"><span class="eyebrow">D · 多年观察、访谈与第一人称内容</span><h3>旷野、小镇做题家与「上岸」叙事</h3><p>《中国青年报》2023 年用苏敏、退学重考和裸辞等例子讨论「旷野」，2025 年又记录职业规划采访。界面文化观察到旅行风景被用于表达这句口号。谢爱磊的跟踪研究访谈呈现了出身、可用资源和学校经历的差异。失业与考研受访者故事里，有人找到临时落点，也有人仍在等待。</p><p><b>可迁移：</b>允许作者补充房租、照护、身体、运气等现实条件。选题把稳定上班、技能转岗、暂时待业放在同一平面。反内卷被改写成「谁更敢辞职、谁过得更漂亮」，是从这些呈现推导的风险，缺少普遍程度的数据。可以用一条落榜的亲历者播客和一条「失利后上哈佛」视频辨认两种叙事，不用播放量给故事排价值。</p><p class="sources"><a href="https://news.youth.cn/jsxw/202307/t20230718_14655429.htm">中国青年报 · 2023</a><a href="https://news.youth.cn/sh/202505/t20250526_16022299.htm">中国青年报 · 2025</a><a href="https://www.jiemian.com/article/10533173.html">界面文化</a><a href="https://www.thepaper.cn/newsDetail_forward_27454662">谢爱磊访谈</a><a href="https://www.thepaper.cn/newsDetail_forward_25888934">考研等失利纪实</a><a href="https://m.thepaper.cn/newsDetail_forward_18017616">应届求职报道</a><a href="https://www.xiaoyuzhoufm.com/episode/6a2eca224233e62bc549c4cb">高考失利自述</a><a href="https://www.youtube.com/watch?v=X_59L1asf5E">逆袭视频样本</a></p></article>
+  </div>
+  <h3 class="subheading">四个可借鉴的社区机制</h3>
+  <div class="evidence-grid">
+    <article class="case"><span class="eyebrow">原站与展览记录</span><h3>PostSecret · 让一张卡片成为约定</h3><p>参与者把秘密做成匿名明信片，编辑选择公开，官网现有 Sunday Secrets 栏目。Smithsonian 年报记载其邮政博物馆展览从累计超过 50 万张收件中展出逾 500 张，该数字是历史收件量。具体物件降低了表达门槛，固定节奏给读者回访理由。借鉴卡片和每周选题，发布前仍请作者逐张许可，避免把「秘密要够惊人」变成编辑标准。</p><p class="sources"><a href="https://postsecret.com/">PostSecret 原站</a><a href="https://www.si.edu/sites/default/files/about/2016siannualreport.pdf">Smithsonian 2016 年报</a></p></article>
+    <article class="case"><span class="eyebrow">项目帮助中心</span><h3>StoryCorps · 把存下和公开分开</h3><p>其帮助中心分别说明录音授权表与隐私设置。可借鉴先记录、再确认谁能看、最后单独确认公开使用的顺序。一段话可以先留给自己，后来给几位同路人看，之后才决定要不要外发。持续保留的价值来自本人回看以及再次授权，无需一次做完全部决定。</p><p class="sources"><a href="https://support.storycorps.org/help-center/what-is-the-difference-between-my-release-form-and-my-privacy-setting">授权与隐私说明</a><a href="https://support.storycorps.org/help-center/what-if-i-dont-want-to-upload-my-storycorps-app-interview">不上传录音的选项</a></p></article>
+    <article class="case"><span class="eyebrow">制作方节目与站内可见互动</span><h3>故事FM · 先听见一个人的生活</h3><p>制作方以亲历者自述为基本形式，退学主题一集下可见听众讲起自己的班级、家庭与期待。此样本可观察到由故事触发的自述，无法代表全部听众。可借鉴抓住一个动作和场景的访谈法，再让讲述者复核取舍。每周把相似处境的不同讲法并排，形成接续；首轮用文字，降低声音识别和编辑成本。</p><p class="sources"><a href="https://www.xiaoyuzhoufm.com/episode/6336c906e2385e9dfe5d57f6">节目和公开讨论</a><a href="https://www.youtube.com/watch?v=1EtGa-Pz3Xw">制作方征稿规则</a></p></article>
+    <article class="case"><span class="eyebrow">平台自述与帮助中心</span><h3>Supportiv · 相似处境与回应边界</h3><p>平台按处境匹配匿名小组，采用实时人工主持，并在 FAQ 说明服务范围。相似处境加上在场的人，有望让求理解的意图更清楚。首轮可用排班中的异步回信验证这一点。实时匹配、全天主持及专业服务有自己的成本，试点无需承担这些前提。</p><p class="sources"><a href="https://www.supportiv.com/">Supportiv 官方</a><a href="https://www.supportiv.com/faqs">Supportiv FAQ</a></p></article>
+  </div>
+  <div class="callout"><h3>优先验证的三个动作</h3><p>看到一个相似场景后愿意写下第一句。知道谁会看到、能收到什么回应后愿意投出。第一次被理解之后回来看回信、给别人回信，或写下新的一节。三者缺一，都可能只剩话题内容消费。</p></div>
+</div></section>
+<section class="chapter" id="options"><div class="wrap">
+  <div class="section-head"><div><p class="kicker">产品方向对比</p><h2>四种不同的回访理由</h2></div><p>每个方向的基本单元和持续参与方式都不同。比较依据是本阶段的产品判断，分级属于假设，试点先查证最关键的分歧。</p></div>
+  <article class="option featured"><div><span class="eyebrow">推荐 · 未完故事</span><h3>同一段人生，写几次</h3></div><div><p>第一次写「那天」，以后可以写「现在」。一个面试落选的人用化名写下走出办公楼后的十分钟，先选只想被听见。后来订阅者收到他主动发的一次更新，也可能看到他把可见范围收回。价值在于看到同一个人如何在变化、停顿和反复里生活，关系围绕一则故事自然积累。</p></div></article>
+  <article class="option"><div><span class="eyebrow">异步小组 · 同路回信</span><h3>把一段话交给同路人</h3></div><div><p>几位正在经历同一场景的人进入一个限时小组，每人投一封短信，再挑一封写回信。比如等待入职结果的一周，只谈等待如何影响生活。价值是互惠和更可预期的受众。参与靠每期配对和出席，缺人就容易落空，私域内容也难以形成外部入口。</p></div></article>
+  <article class="option"><div><span class="eyebrow">编辑选题 · 人生路线图</span><h3>把不同选择放在同一张图上</h3></div><div><p>从「毕业后没进本行业」出发，读同一处境下做技能学徒、回家照护、继续找工作的三篇编辑稿。作者可贡献新分岔，也可补充当时的条件和代价。价值是打破路径想象。回访来自新专题，选题和编辑成本较高，也容易把生活整理成供人挑选的榜样。</p></div></article>
+  <article class="option"><div><span class="eyebrow">轻创作 · 一张没选上的卡</span><h3>用一句话发起接力</h3></div><div><p>同一个句式发起每周接力，如「通知里没出现我的名字，后来我先去做了＿＿」。作者一键预览并自选是否外发。价值是让原本不会主动写长文的人迈出第一步，传播阻力小。回访靠新题，卡片看完即走，长期也容易滑向比惨或身份反差炫耀。</p></div></article>
+  <div class="table-shell" tabindex="0" role="region" aria-label="方向对比表，可横向滚动"><table>
+    <caption>按首轮目标判断。运营难度包含审核、供给和主持。</caption>
+    <thead><tr><th scope="col">方向</th><th scope="col">社会价值</th><th scope="col">参与吸引力</th><th scope="col">自然传播</th><th scope="col">持续使用</th><th scope="col">首轮难度</th></tr></thead>
+    <tbody>
+      <tr class="picked"><th scope="row">未完故事</th><td>高 · 容纳无结局</td><td>较高 · 先写一幕</td><td>中高 · 可摘一句</td><td>中高 · 回信与续写</td><td>中 · 授权与审核</td></tr>
+      <tr><th scope="row">同路回信</th><td>高 · 小范围理解</td><td>中高 · 看分组命中</td><td>低 · 保护小组私密</td><td>中 · 看同组履约</td><td>高 · 人工配对和主持</td></tr>
+      <tr><th scope="row">人生路线图</th><td>高 · 看见现实约束</td><td>中 · 阅读强，供稿慢</td><td>中 · 可转主题图</td><td>中 · 依赖新专题</td><td>高 · 持续采编</td></tr>
+      <tr><th scope="row">一张没选上的卡</th><td>中 · 表达碎片化</td><td>高 · 写一句即可</td><td>高 · 格式易复制</td><td>低 · 依赖新题</td><td>低 · 人工可做</td></tr>
+    </tbody>
+  </table></div>
+  <p class="measure"><b>押注「未完故事」。</b>它能把分享、被理解和再次出现放到同一件事情上，还能用一张卡验证外部传播。同路回信用作小范围测试，路线图用作专题编辑方法。若早期有首投和回信、却几乎无人回访，优先重验短期小组，再决定是否保留故事订阅。</p>
+  <div class="callout"><h3>独立入口的理由</h3><p>小红书擅长让一则笔记离开熟人圈，豆瓣小组能聚起共享话题的人，Reddit 用投票参与内容分发。失败学要验证的是另一种默认规则：以时间线保存同一段经历，按作者许可回信，靠相似场景和编辑轮换分发。三种现有平台都可以成为征集渠道。只有这些规则使创作者真的感觉到差异，独立产品才值得做。</p><p class="sources"><a href="https://news.dayoo.com/finance/202601/20/171077_54918901.htm">小红书社区公约 2.0 报道</a><a href="https://www.douban.com/group/category?id=847">豆瓣小组目录</a><a href="https://support.reddithelp.com/hc/en-us/articles/7419626610708-What-are-upvotes-and-downvotes">Reddit 投票说明</a></p></div>
+</div></section>
+<section class="chapter" id="experience"><div class="wrap">
+  <div class="section-head"><div><p class="kicker">首版产品体验</p><h2>读几段、写一幕、留一封回信</h2></div><p>首页从处境进入。首屏展示本周问题、少量同题故事和可直接开始的一句提示。每周轮换焦点，用有限且有差异的故事帮读者找到共鸣。</p></div>
+  <div class="callout" style="margin:0 0 1.25rem"><h3>一个晚上，两次回来</h3><p>虚构场景。毕业班的小满在朋友圈看到一张「结果出来那天」的卡，读了两段相似经历。她写下坐错方向的地铁，预览后只发给邀请组，再选「只想被听见」。第二天收到一句「谢谢你告诉我」，她回来看了一眼。两周后，她主动补上一节。读过原故事且订阅后续的人才会收到提醒。</p></div>
+  <div class="prototype">
+    <article class="mock" aria-label="首页概念"><div class="mock-head"><span>失败学</span><span class="meta">首页示意 · 虚构故事</span></div><div class="mock-body">
+      <p class="kicker">本周问题</p><h3>消息来之前，你以为接下来会怎样？</h3>
+      <div class="filterline" aria-label="场景分类示意"><span class="tag active">几条同题故事</span><span class="tag">没被选上</span><span class="tag">离开原来的路</span><span class="tag">还在等消息</span></div>
+      <div class="sample"><h4>查完成绩，我坐了两站反方向的地铁</h4><p>我爸问我到哪了。我看了眼车厢屏幕，说还有三站。</p><p class="meta">匿名故事 · 只想被听见 · 有一节续写</p></div>
+      <div class="sample alt"><h4>我接了大家觉得可惜的那份工作</h4><p>下班的车还没到站，我就能在窗户里看到厨房亮着灯。</p><p class="meta">匿名故事 · 愿听相似经历</p></div>
+      <p class="caption" style="margin-top:.7rem">你还记得当时在哪里吗？从那一幕写起。</p>
+    </div></article>
+    <article class="mock" aria-label="故事页互动示意"><div class="mock-head"><span>故事与续写</span><span class="meta">虚构示例 · 可点选体验</span></div><div class="mock-body">
+      <p class="kicker">小满的故事 · 仅社区可见</p><h3>两站反方向的地铁</h3>
+      <p>我把截图从相册里删了，手机还是一直拿在手上。我想先去便利店买个饭团，坐一会儿，再回去说这件事。</p>
+      <details><summary>读小满两周后的续写</summary><p>今天和朋友吃了顿饭。她问我这周有没有什么想吃的，没问我还考不考。回到家，我把春天的招聘页面存了下来，没打开。</p><p class="caption">小满仍选择「只想被听见」。</p></details>
+      <div class="demo-actions" aria-label="模拟私人回应">
+        <button type="button" aria-pressed="false" data-label="已模拟发送给小满。此回应仅作者可见。">谢谢你告诉我</button>
+        <button type="button" aria-pressed="false" data-label="已模拟订阅。只有小满以后主动发出续写时才会提醒。">留意后续</button>
+      </div>
+      <p class="demo-status" role="status" aria-live="polite">此处为离线演示。没有真实账号或投稿。</p>
+    </div></article>
+  </div>
+  <h3 class="subheading">哪种形式负责哪一步</h3>
+  <div class="split">
+    <div><h3>共鸣 · 具体一幕与不同版本</h3><p>假设：一件小事、一句现场原话加一条作者自己写的近况，比抽象情绪或完整励志传记更容易让人认出自己的处境。「后来」可以只写一个动作，也可以写「还没想好」，触发新的理解，无需统一结局。</p></div>
+    <div><h3>参与 · 一句话也能交上来</h3><p>自主选择「那天我……」写一句或 120–400 字。校名、分数、公司等都非必填。担心被认出、被建议、写得不够好或永久留痕时，可以先存草稿、选故事化名并预览读者视角。运营帮忙删去识别线索，作者确认原意再投。</p></div>
+    <div><h3>传播 · 摘出一句允许带走的话</h3><p>站外卡用「一个场景词＋一条作者选定的原话＋当下状态＋同题入口」。样卡是「结果出来那天｜我到了楼下，又在外面绕了一圈｜现在还不想聊下一步」。小红书用竖图同题征集，微博用一句接力，B 站用经授权的匿名字幕读卡，朋友圈用熟人间一张可转卡。默认去掉化名、地点、精确时间和原文入口，示例标明虚构。</p></div>
+    <div><h3>复访 · 回信比催更更重要</h3><p>独特机制是「相似片段」：读者先点出文中让自己有共鸣的一小段，再写自己的一个场景，私下交给作者。作者可以收下、致谢或关闭，回信只有双方可见。作者主动发新节点时仅通知订阅者，原有读者从被理解的一句回来。作者可自订一次提醒，取消容易且不显示谁在等待。</p></div>
+  </div>
+  <h3 class="subheading">一次发布的路径</h3>
+  <ol class="flow" aria-label="从写作到发布的四步流程">
+    <li><b>1 · 写一幕</b><span>用一个问题开始，写下发生过什么。现在的状态可跳过；草稿只给自己。</span></li>
+    <li><b>2 · 设回应</b><span>只想被听见／愿听相似经历／希望听建议。之后可改，随时关闭回信。</span></li>
+    <li><b>3 · 选受众</b><span>预览化名与读者可见内容，标出识别线索。初始私密，可选邀请组内或社区可见。</span></li>
+    <li><b>4 · 作者确认</b><span>人工看隐私和伤害风险，作者确认最终稿。日后从「我的故事」续写、改范围或撤回。</span></li>
+  </ol>
+  <p class="caption">站外摘句是发布后的单独动作。每次变更受众先预览，续写初始继承当前较窄的可见范围，想公开时再确认。</p>
+  <h3 class="subheading">第一版信息架构</h3>
+  <div class="architecture" aria-label="第一版三个入口">
+    <div><h4>阅读 →</h4><p>本周选题／情境入口 → 故事卡 → 私下回应，或订阅续写</p></div>
+    <div><h4>写一段 →</h4><p>私密草稿 → 设回应和范围 → 编辑复核与确认 → 故事页</p></div>
+    <div><h4>我的故事 →</h4><p>草稿／已发布／收到的回信／关注的故事 → 续写、改范围、撤回</p></div>
+  </div>
+  <p class="measure">最小产品同时需要举报和人工运营队列。首轮人手用现有的受控工具模拟上述路径。验证通过后才做轻量中文移动端，优先打通写一幕、按边界回应、原故事续写。主题档案、个性化推荐、语音、线下活动与 AI 都等各自有需求证据后再做。</p>
+</div></section>
+<section class="chapter" id="care"><div class="wrap">
+  <div class="section-head"><div><p class="kicker">社区与信任</p><h2>把话语权留在作者手里</h2></div><p>编辑和运营首先要照顾作者的意愿与感受。衡量社区效果时也要算上那些选择沉默、缩小范围和撤回的人。</p></div>
+  <ul class="rules">
+    <li><h3>内容分发</h3><p>取消可见的粉丝、赞与排行。用情境匹配、人工轮换和作者主动更新分发。编辑看情境是否鲜明、权限是否明确、选题里的生活是否多样。每周检查首页是否反复集中于名校、大厂、逆袭或伤害程度，必要时用人群和状态覆盖来调选题。续写沿时间排，无进度条、勋章或催更。</p></li>
+    <li><h3>回应规则</h3><p>「只想被听见」只收仅作者可见的预设确认。「愿听相似经历」开放一段第一人称回信。「希望听建议」才出现建议入口，提示先确认对方问了什么。一人对一则故事最多留一封自由文本，首轮人工复核。作者可静音、拒收、隐藏、举报和拉黑。嘲讽、身份审判、比惨、擅自诊断以及反复越界按提示、拦截、禁用分级处理。给双方私下申诉入口。</p></li>
+    <li><h3>匿名与撤回</h3><p>前台用每则故事的化名，后台把必要联络信息和正文分开、限权。试点限成年人，公共发布与外发摘句分别征得许可；禁止转发小组截图，明确外部副本无法保证收回。撤回时停访问、移除卡片入口和订阅通知，同步处理活动页引用及平台可控副本；记录删除请求，按预先说明的期限处理备份与法定留存。正式上线按地区核查身份、保存、处理敏感信息与公开授权义务。</p></li>
+    <li><h3>真实性与指控</h3><p>亲历投稿按第一人称呈现；虚构示例显著标明。允许模糊处理细节，禁止拼装真人经历、冒充、借故事引流和发布可识别第三方的伤害性指控。收到隐私或侵权举报，先限制传播并保存必要受限记录，再核实并允许补充或申诉。对于有证据争议的内容，可去标识后审核、暂停可见或下架，避免社区追查当事人身份。</p></li>
+    <li><h3>严重心理危机</h3><p>试点发布及自由文本先审，只在有人值守的时段放行，入口写明回复时段和服务范围。对明确即时风险，暂停公开和分发、提醒值班人员优先核查并由受训人员私下回应，提供经当地官方来源核实的紧急支持选项，鼓励联系可立即到场的可信任者。对非即时的痛苦表达，可在保护隐私的情况下保留表达，关闭可能增加伤害的讨论。具体方法细节和鼓励自伤内容不上线。紧急资料披露依当地规则和预先拟好的升级流程，仅限必要范围。缺乏值守、双人复核与转介预案时，先停开放投稿。</p></li>
+    <li><h3>AI 的边界</h3><p>首版用可跳过的写作提示和人工脱敏。若访谈显示「我有话但写不出来」显著阻碍参与，再测授权后的分段或去识别提示。编辑逐条确认，保留作者用词及留白，不将稿件用于训练或对外传输原文，除非另行完成合规审查和知情同意。危机判定、申诉和处置由人工负责。</p></li>
+  </ul>
+  <p class="sources"><a href="https://gzca.miit.gov.cn/zwgk/zcwj/zcfg/art/2021/art_98dffb76ef944db68c10194618c72559.html">《个人信息保护法》公开、同意与删除</a><a href="https://www.cac.gov.cn/2024-06/14/c_1720043894161555.htm">《网络暴力信息治理规定》</a><a href="https://www.samaritans.org/about-samaritans/research-policy/internet-suicide/guidelines-tech-industry/guidelines/">Samaritans 用户生成内容治理指南</a><a href="https://www.who.int/europe/publications/i/item/9789240076846">WHO 负责任传播指引</a></p>
+</div></section>
+<section class="chapter" id="pilot"><div class="wrap">
+  <div class="section-head"><div><p class="kicker">冷启动与投入门槛</p><h2>先做 30 天，再决定开发</h2></div><p>先做成人邀请制试点。创始人管招募与作者关系，另一位轮值编辑管内容、回信和举报。公开征集只用作者明确允许的摘句。方案与预算都是计划值。</p></div>
+  <h3 class="subheading">第一篇故事怎么选</h3>
+  <p class="measure">优先邀请一位在招聘中落选的人，写收到消息后手头正在做的一件事。封面的虚构样卡演示了从一个动作起笔的方式。真实首稿由本人确认，保留具体生活和作者眼下的边界，哪怕后来暂时无话可写。搭配一篇主动转向普通工作的故事，避免第一期把所有人都放进「等待上岸」这一位置。</p>
+  <ul class="campaigns">
+    <li><div><h3>一张没选上的卡</h3><p class="meta">测外部入口</p></div><div><p><b>载体与参与</b>　用小红书竖图和朋友圈分享卡发「结果出来后的十分钟」。两个同风格入口分别用场景句与泛口号开头，均导向同一个成人私密征集。人手不足时先做两种卡各一篇，以方向性结果为主。</p><p><b>吸引、成本与风险</b>　不用讲完整人生，读者也能填一句。约 ¥0–150，6–8 人时。防截图外传和选「最惨」，公开编辑只收脱敏后单独获允的摘句，随时下架可控入口。</p><p><b>指标</b>　每版本争取 ≥50 名去重、符合年龄和处境条件的入口访问者。看访客至首投比例、愿授权外发比例及自主带来第二位投稿者的卡。曝光和收藏作渠道数据，样本不足时不判胜负。</p></div></li>
+    <li><div><h3>同题回信夜</h3><p class="meta">测互相理解</p></div><div><p><b>载体与参与</b>　邀请制文字小组，两轮各约 10–12 人，题目是「我最怕谁问起这件事」。主持先用一则虚构故事演示怎么回应，参与者可旁听，只有获许才回一封，群外展示需逐人同意。</p><p><b>吸引、成本与风险</b>　听见同处境的人如何过一天，回应关系也更可预期。约 ¥0–300，10–14 人时。点名催促、旁观者截图和越界建议都可能伤害信任，采用化名受控小组与人工转达。</p><p><b>指标</b>　合规回信覆盖率、作者对「被理解／被评价／说不清」的反馈、是否愿意第二次参与；另外登记拒绝回信或没填反馈的人。主持人代回单列。</p></div></li>
+    <li><div><h3>给两周后的自己留个位置</h3><p class="meta">测复访与时间价值</p></div><div><p><b>载体与参与</b>　作者投一幕，可主动留一个只发一次的提醒。邀请曾回信的读者在作者授权时读第二节。回来的动作可以是写一句、重读回信或给别人留一封信，作者可以取消或改权限。用社群管理员同意后的定向邀请或受控订阅消息。</p><p><b>吸引、成本与风险</b>　能看见同一段生活改变的方式，也能接受暂时无变化。约 ¥0–200，8–12 人时。提醒容易像作业，默认关闭、不设截止，不公开谁在等，区分有提醒与无提醒复访。</p><p><b>指标</b>　首投后第 8–14 天有意义复访率、真实续写人数、退订和撤回原因。读者收到通知后的回读单报，不用于凑作者留存。</p></div></li>
+  </ul>
+  <h3 class="subheading">从 12 位种子讲述者到 100 位首投作者</h3>
+  <p>先通过经管理员同意的毕业求职群、职业院校校友群、转行社群及朋友转介，定向邀约 12 位种子讲述者。覆盖仍在低谷、转向和普通日常；首期发 6–8 篇经确认的短稿。运营给每位讲述者选择私密草稿、组内或社区公示的权利。读者看过同题后再发邀请；愿意的人可把空白模板转给一位朋友，运营不索取联系名单。复访靠每周新问题、真实回信和作者自愿更新。</p>
+  <p>30 天招募目标是 40 位不同的有效首投作者，其中希望至少 20 位来自团队熟人及主动约访之外。第一批 100 位可按「本轮 40＋后续两轮各 30」推演，第二和第三轮须看到真实转介绍与足够值守能力再开。每人只计一次首投。先看是否有可信的供给，不用反复催促填足人数。</p>
+  <ol class="steps" aria-label="30 天执行日程">
+    <li><h3>第 1–7 天<br>确认用词与边界</h3><p>访谈约 12 位目标用户，问最近一次想说却没说的经历、担心什么、哪里已经能满足。同一批先做私密和组内预览；落地授权文本、值班与撤回流程，演练一次网暴和危机升级，备好获得许可的首周内容。</p></li>
+    <li><h3>第 8–14 天<br>开始征集与回信</h3><p>测试场景卡和普通征集语，开展第一轮回信。短句模板与空白写法按入口交替分发，看有效投稿和放弃原因。为了让 14 天回访有观测期，第 16 天前锁定首批作者复访统计队列。</p></li>
+    <li><h3>第 15–23 天<br>看作者是否回来</h3><p>跑第二轮回信，提供一次可选提醒。观察作者读信、回信或续写，收集允许呈现的无结局样本。访问撤稿及仅阅读者，询问阻碍并做简短匿名反馈。持续记录每次处置耗时。</p></li>
+    <li><h3>第 24–30 天<br>读数据，做决定</h3><p>用成熟队列算复访。分来源、提醒意愿和熟人关系，披露小样本、未回复与延期。合并试点三种动作的证据，做继续、修改方向或停止的决策。留存或销毁的资料及期限按初始承诺处理。</p></li>
+  </ol>
+  <p class="caption">两人总计约 50–70 人时，现金上限 ¥1,000。活动成本包含在总盘子内，余量可补贴访谈时间。补贴与是否公开、是否写续集无关。</p>
+  <h3 class="subheading">什么证据足以做第一版</h3>
+  <div class="table-shell" tabindex="0" role="region" aria-label="试点开发门槛表，可横向滚动"><table>
+    <caption>试点前写下门槛。每项同时记录原始分子与分母，样本较小时用访谈解释，避免外推。</caption>
+    <thead><tr><th scope="col">检验</th><th scope="col">继续的暂定门槛</th><th scope="col">计算与判读</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">真实表达</th><td>≥40 位有效首投作者，至少 20 位非团队熟人且非一对一主动约访</td><td>一次有效首投为一段本人同意组内或社区阅读、通过规则审核的第一人称经历。私密草稿和工作人员范例另报。按入口汇报首投人数／去重合格访问者。</td></tr>
+      <tr><th scope="row">被人理解</th><td>≥70% 可收回信的故事在 72 小时内收到至少一次合规非工作人员回应；≥60% 可收回信的作者确认受到理解</td><td>两项分母均包括相应开放回应样本里未回复的人或故事。收反馈只问具体那次回应，同时记录越界与撤回。「谢谢」与自由文本分开报。</td></tr>
+      <tr><th scope="row">复访及续写</th><td>成熟队列 ≥25 人，其中 ≥30% 有意义复访，另有 ≥5 人自愿发布续写</td><td>观察窗口为首投后第 8–14 天，有效动作为打开真实回信、给别人回应或续写。操作测试、员工催办、纯浏览与只点提醒不计。分报提醒组和自发复访。</td></tr>
+      <tr><th scope="row">可安全运营</th><td>每次公示有授权记录，撤回演练全通过，无未处置严重事件，普通稿件的编辑审核中位耗时 ≤15 分钟</td><td>分开记前台响应和后台复核时间，报告积压、超时和撤回原因；公示先审，值守能力优先于数量目标。</td></tr>
+    </tbody>
+  </table></div>
+  <p class="measure"><b>决策规则。</b>四项都达成才投入轻量首版。触达较弱而回访和回信好时，先复验招募；有首投但复访弱时，优先对比短期小组；连有边界的首投或被理解也做不起来，则先停止开发投入。严重安全事件未妥善处置时立即暂停试点。样本不足时保留判断，补一个小批次再决定。</p>
+</div></section>
+<section class="chapter inverse" id="founder"><div class="wrap">
+  <div class="section-head"><div><p class="kicker">创始人决策</p><h2>该押什么，什么会推翻它</h2></div><p>我会押注作者能掌握观看范围与回应边界、以后还能补上一句的「未完故事」。优先用毕业与求职过渡期验证，首期邀请成年用户。</p></div>
+  <div class="ribbon">
+    <div><h3>作者供给不持续</h3><p>公开阅读容易，发出和续写困难。看非熟人首投、拒绝原因与成熟队列复访。用私密写作和人工陪写区分怕曝光与不想写。</p></div>
+    <div><h3>选题反过来制造比较</h3><p>传播偏爱极端、精英反差和逆袭。控住首页轮换与素材授权，核对无结局和普通生活的比例与作者反馈。</p></div>
+    <div><h3>治理成本超过承载</h3><p>外传、指控、伤害性回应和严重危机可能压过小团队。先审后发，演练撤回与升级，看单稿耗时和积压再决定扩容。</p></div>
+  </div>
+  <h3 class="subheading">五个需要创始人拍板的问题</h3>
+  <ol class="questions">
+    <li><h3>1 · 首周先讲什么？</h3><p>从「求职没被选上」或「升学没按计划」选一个主主题。建议选求职，用教育背景不同的成人检验跨身份共鸣。</p></li>
+    <li><h3>2 · 内容默认给谁看？</h3><p>建议草稿默认私密，试点投稿默认邀请组，外发摘句选择加入。是否接受首轮文本只在有限邀请范围流通？</p></li>
+    <li><h3>3 · 名字对作者意味着什么？</h3><p>保留项目名「失败学」。访谈时测试它是许可、玩笑还是标签。若参与者说名字让自己更难分享，保留使命并重新选面向读者的名字。</p></li>
+    <li><h3>4 · 谁负责照顾这个房间？</h3><p>明确一位值班负责人和一名后备，确认审核和应急可覆盖的时段及每周上限，决定谁能触达联络信息。</p></li>
+    <li><h3>5 · 什么时候投入开发？</h3><p>确认 30 天的现金与时间上限、开发门槛和没达标时的去向。建议将三个行为指标与安全指标一起用，保留停止的选项。</p></li>
+  </ol>
+  <p class="closing">事情办砸过，方向变过，答案还没出来。每一段生活都值得被认真听见。</p>
+</div></section>
+</main>
+<footer><div class="wrap"><span>失败学 · 第一阶段产品提案</span><a href="#top">回到封面 ↑</a></div></footer>
+<script>
+  const status = document.querySelector('.demo-status');
+  const initialStatus = status.textContent;
+  document.querySelectorAll('.demo-actions button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const active = button.getAttribute('aria-pressed') === 'true';
+      button.setAttribute('aria-pressed', String(!active));
+      status.textContent = active ? '已撤销刚才的模拟操作。' : button.dataset.label;
+      if (active && !document.querySelector('.demo-actions [aria-pressed="true"]')) {
+        status.textContent += initialStatus;
+      }
+    });
+  });
+</script>
+</body>
+</html>
